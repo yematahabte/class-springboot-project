@@ -1,6 +1,19 @@
-spring.datasource.url=jdbc:postgresql://localhost:5432/actmoneytransfer
-spring.datasource.username=actmonertransferadmin
-spring.datasource.password=postgres@123
-spring.datasource.driver-class-name=org.postgresql.Driver
-
-spring.autoconfigure.exclude=org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/actmoneytransfer
+    username: actmoneytransferadmin
+    password: postgres@123
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto:  update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+#  autoconfigure:
+#    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
